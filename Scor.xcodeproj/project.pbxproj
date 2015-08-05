@@ -14,6 +14,11 @@
 		3671BC601B70F7AE005B1F9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3671BC5E1B70F7AE005B1F9B /* LaunchScreen.storyboard */; };
 		3671BC6B1B70F7AE005B1F9B /* ScorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3671BC6A1B70F7AE005B1F9B /* ScorTests.swift */; };
 		3671BC761B70F7AE005B1F9B /* ScorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3671BC751B70F7AE005B1F9B /* ScorUITests.swift */; };
+		3671BC861B70F830005B1F9B /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3671BC851B70F830005B1F9B /* Match.swift */; };
+		3671BC8A1B710468005B1F9B /* HurlingMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3671BC891B710468005B1F9B /* HurlingMatch.swift */; };
+		36F51AB51B725F0200FC58A8 /* HurlingMatchTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F51AB41B725F0200FC58A8 /* HurlingMatchTabController.swift */; };
+		36F51AB71B725FB800FC58A8 /* HurlingGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F51AB61B725FB800FC58A8 /* HurlingGameViewController.swift */; };
+		36F51AB91B726E0900FC58A8 /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F51AB81B726E0900FC58A8 /* StartScreenViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		3671BC711B70F7AE005B1F9B /* ScorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ScorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3671BC751B70F7AE005B1F9B /* ScorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScorUITests.swift; sourceTree = "<group>"; };
 		3671BC771B70F7AE005B1F9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3671BC851B70F830005B1F9B /* Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		3671BC891B710468005B1F9B /* HurlingMatch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HurlingMatch.swift; sourceTree = "<group>"; };
+		36F51AB41B725F0200FC58A8 /* HurlingMatchTabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HurlingMatchTabController.swift; sourceTree = "<group>"; };
+		36F51AB61B725FB800FC58A8 /* HurlingGameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HurlingGameViewController.swift; sourceTree = "<group>"; };
+		36F51AB81B726E0900FC58A8 /* StartScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +113,11 @@
 				3671BC5C1B70F7AE005B1F9B /* Assets.xcassets */,
 				3671BC5E1B70F7AE005B1F9B /* LaunchScreen.storyboard */,
 				3671BC611B70F7AE005B1F9B /* Info.plist */,
+				3671BC851B70F830005B1F9B /* Match.swift */,
+				3671BC891B710468005B1F9B /* HurlingMatch.swift */,
+				36F51AB41B725F0200FC58A8 /* HurlingMatchTabController.swift */,
+				36F51AB61B725FB800FC58A8 /* HurlingGameViewController.swift */,
+				36F51AB81B726E0900FC58A8 /* StartScreenViewController.swift */,
 			);
 			path = Scor;
 			sourceTree = "<group>";
@@ -255,8 +270,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36F51AB91B726E0900FC58A8 /* StartScreenViewController.swift in Sources */,
 				3671BC581B70F7AE005B1F9B /* ViewController.swift in Sources */,
 				3671BC561B70F7AE005B1F9B /* AppDelegate.swift in Sources */,
+				36F51AB71B725FB800FC58A8 /* HurlingGameViewController.swift in Sources */,
+				3671BC861B70F830005B1F9B /* Match.swift in Sources */,
+				3671BC8A1B710468005B1F9B /* HurlingMatch.swift in Sources */,
+				36F51AB51B725F0200FC58A8 /* HurlingMatchTabController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +501,7 @@
 				3671BC7C1B70F7AE005B1F9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3671BC7D1B70F7AE005B1F9B /* Build configuration list for PBXNativeTarget "ScorTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +510,7 @@
 				3671BC7F1B70F7AE005B1F9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3671BC801B70F7AE005B1F9B /* Build configuration list for PBXNativeTarget "ScorUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +519,7 @@
 				3671BC821B70F7AE005B1F9B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

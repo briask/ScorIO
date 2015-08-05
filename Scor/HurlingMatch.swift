@@ -21,26 +21,26 @@ class HurlingMatch: NSObject {
     
     func GetHomeTeamScoreForDisplay() -> String
     {
-        let score: String = "\(String(HomeTeamGoals)) : \(String(HomeTeamPoints)))"
+        let score: String = "\(String(HomeTeamGoals)) : \(String(HomeTeamPoints))"
 
         return score
     }
     
     func GetAwayTeamScoreForDisplay() -> String
     {
-        let score: String = "\(String(AwayTeamGoals)) : \(String(AwayTeamPoints)))"
+        let score: String = "\(String(AwayTeamGoals)) : \(String(AwayTeamPoints))"
         
         return score
     }
     
     func AddHomePoint()
     {
-        HomeTeamPoints += HomeTeamPoints
+        HomeTeamPoints += 1
     }
     
     func RemoveHomePoint()
     {
-        HomeTeamPoints -= HomeTeamPoints
+        HomeTeamPoints -= 1
         if (HomeTeamPoints <= 0){
             HomeTeamPoints = 0
         }
@@ -48,12 +48,12 @@ class HurlingMatch: NSObject {
     
     func AddAwayPoint()
     {
-        AwayTeamPoints += AwayTeamPoints
+        AwayTeamPoints += 1
     }
     
     func RemoveAwayPoint()
     {
-        AwayTeamPoints -= AwayTeamPoints
+        AwayTeamPoints -= 1
         if (AwayTeamPoints <= 0){
             AwayTeamPoints = 0;
         }
@@ -61,25 +61,24 @@ class HurlingMatch: NSObject {
     
     func AddHomeGoal()
     {
-        HomeTeamGoals += HomeTeamGoals
+        HomeTeamGoals += 1
     }
     
     func RemoveHomeGoal()
     {
-        HomeTeamGoals -= HomeTeamGoals
+        HomeTeamGoals -= 1
         if (HomeTeamGoals <= 0){
             HomeTeamGoals = 0
         }
     }
     
     func AddAwayGoal()
-    {
-        AwayTeamGoals += AwayTeamGoals
+    {        AwayTeamGoals += 1
     }
     
     func RemoveAwayGoal()
     {
-        AwayTeamGoals -= AwayTeamGoals
+        AwayTeamGoals -= 1
         if (AwayTeamGoals <= 0)
         {
             AwayTeamGoals = 0
