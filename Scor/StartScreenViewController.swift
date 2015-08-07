@@ -10,6 +10,10 @@ import UIKit
 
 class StartScreenViewController: UIViewController {
 
+    @IBOutlet weak var HomeTeamNameTxt: UITextField!
+    
+    @IBOutlet weak var AwayTeamNameTxt: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,14 +26,21 @@ class StartScreenViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        let newProgramVar = HurlingMatch()
+        
+        newProgramVar.HomeTeamName = HomeTeamNameTxt.text!
+        newProgramVar.AwayTeamName = AwayTeamNameTxt.text!
+        
+        // Create a new variable to store the instance of PlayerTableViewController
+        let destinationVC = segue.destinationViewController as! HurlingMatchTabController
+        destinationVC.theMatch = newProgramVar
     }
-    */
-
+    
+    @IBAction func StartMatch(sender: UIButton) {
+    }
 }
