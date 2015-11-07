@@ -19,6 +19,55 @@ class HurlingMatch: NSObject {
     var AwayTeamPoints: Int = 0
     var AwayTeamGoals: Int = 0
     
+    var MatchLength: Int = 0
+    
+    var MatchCommentary = [String]()
+    
+    func CreateMatchComment(matchEvent: String) -> String {
+        var comment: String = ""
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "h:mm "
+        
+        let dateString = dateFormatter.stringFromDate(NSDate())
+        comment += dateString + " "
+        comment += matchEvent
+        comment += HomeTeamName + " " + GetHomeTeamScoreForDisplay() + " "
+        comment += AwayTeamName + " " + GetAwayTeamScoreForDisplay()
+        
+        MatchCommentary.append(comment)
+        
+        return comment
+    }
+    
+    func GetMatchSummary() -> String {
+        
+        let diff = abs(GetAwayScoreTotal() - GetHomeScoreTotal())
+        var pointTxt = "points."
+        if (diff == 1) {
+            pointTxt = "point."
+        }
+        
+        if (GetHomeScoreTotal() == GetAwayScoreTotal()) {
+            return "Sides are level"
+        }
+        else if (GetHomeScoreTotal() > GetAwayScoreTotal())
+        {
+            return "\(HomeTeamName) are ahead by \(diff) \(pointTxt)"
+        }
+        else {
+            return "\(AwayTeamName) are ahead by \(diff) \(pointTxt)"
+        }
+    }
+    
+    func GetHomeScoreTotal() -> Int {
+        return (HomeTeamGoals * 3) + HomeTeamPoints
+    }
+
+    func GetAwayScoreTotal() -> Int {
+        return (AwayTeamGoals * 3) + AwayTeamPoints
+    }
+    
     func GetHomeTeamScoreForDisplay() -> String
     {
         let score: String = "\(String(HomeTeamGoals)) : \(String(HomeTeamPoints))"
@@ -73,7 +122,8 @@ class HurlingMatch: NSObject {
     }
     
     func AddAwayGoal()
-    {        AwayTeamGoals += 1
+    {
+        AwayTeamGoals += 1
     }
     
     func RemoveAwayGoal()

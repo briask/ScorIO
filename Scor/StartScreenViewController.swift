@@ -14,7 +14,10 @@ class StartScreenViewController: UIViewController {
     
     @IBOutlet weak var AwayTeamNameTxt: UITextField!
     
+    @IBOutlet weak var MatchLengthSeg: UISegmentedControl!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -31,14 +34,34 @@ class StartScreenViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        let newProgramVar = HurlingMatch()
+        let hurlingMatch = HurlingMatch()
         
-        newProgramVar.HomeTeamName = HomeTeamNameTxt.text!
-        newProgramVar.AwayTeamName = AwayTeamNameTxt.text!
+        hurlingMatch.HomeTeamName = HomeTeamNameTxt.text!
+        hurlingMatch.AwayTeamName = AwayTeamNameTxt.text!
         
-        // Create a new variable to store the instance of PlayerTableViewController
+        if (hurlingMatch.HomeTeamName.characters.count == 0){
+            hurlingMatch.HomeTeamName = "Home";
+        }
+        
+        if (hurlingMatch.AwayTeamName.characters.count == 0){
+            hurlingMatch.AwayTeamName = "Away";
+        }
+        
+        var length = MatchLengthSeg.selectedSegmentIndex
+        switch (length) {
+            case 0: length = 10
+            case 1: length = 15
+            case 2: length = 20
+            case 3: length = 25
+            case 4: length = 30
+            case 5: length = 35
+            default: length = 30
+        }
+        
+        hurlingMatch.MatchLength = length
+        
         let destinationVC = segue.destinationViewController as! HurlingMatchTabController
-        destinationVC.theMatch = newProgramVar
+        destinationVC.theMatch = hurlingMatch
     }
     
     @IBAction func StartMatch(sender: UIButton) {

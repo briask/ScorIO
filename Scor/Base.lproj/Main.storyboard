@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ukc-am-F6O">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ukc-am-F6O">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
     <scenes>
         <!--Start Screen View Controller-->
@@ -42,17 +42,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="5" translatesAutoresizingMaskIntoConstraints="NO" id="XpK-ZU-TKH">
-                                <rect key="frame" x="151" y="163" width="204" height="29"/>
-                                <segments>
-                                    <segment title="10"/>
-                                    <segment title="15"/>
-                                    <segment title="20"/>
-                                    <segment title="25"/>
-                                    <segment title="30"/>
-                                    <segment title="35"/>
-                                </segments>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Half Length" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QHB-vb-Hdg">
                                 <rect key="frame" x="27" y="170" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -67,6 +56,17 @@
                                     <segue destination="aXR-kl-KQF" kind="show" identifier="MatchTabSeque" id="mrd-GK-RP5"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="4" translatesAutoresizingMaskIntoConstraints="NO" id="XpK-ZU-TKH">
+                                <rect key="frame" x="151" y="163" width="204" height="29"/>
+                                <segments>
+                                    <segment title="10"/>
+                                    <segment title="15"/>
+                                    <segment title="20"/>
+                                    <segment title="25"/>
+                                    <segment title="30"/>
+                                    <segment title="35"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -74,6 +74,7 @@
                     <connections>
                         <outlet property="AwayTeamNameTxt" destination="vST-vc-IPc" id="dat-AP-WPK"/>
                         <outlet property="HomeTeamNameTxt" destination="rcC-2h-c53" id="xoB-id-9CW"/>
+                        <outlet property="MatchLengthSeg" destination="XpK-ZU-TKH" id="qhw-4m-CaZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nR5-1O-WPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -175,7 +176,7 @@
                                 <rect key="frame" x="0.0" y="386" width="375" height="232"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Commentary" id="kbG-Gy-ksI">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentCell" id="kbG-Gy-ksI">
                                         <rect key="frame" x="0.0" y="22" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kbG-Gy-ksI" id="FAT-pA-qOZ">
@@ -230,24 +231,27 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6N-UN-ujd">
-                                <rect key="frame" x="128" y="154" width="119" height="60"/>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9jL-cp-Rqf">
-                                <rect key="frame" x="47" y="169" width="46" height="30"/>
+                                <rect key="frame" x="50" y="169" width="70" height="30"/>
                                 <color key="backgroundColor" red="0.40000000600000002" green="1" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Start">
+                                <state key="normal" title="Time On">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="StartBtn:" destination="Ngc-Lv-SHy" eventType="touchUpInside" id="431-Us-fTY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewg-b1-FaC">
-                                <rect key="frame" x="282" y="169" width="46" height="30"/>
+                                <rect key="frame" x="255" y="169" width="70" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Stop">
+                                <state key="normal" title="Time Off">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="StopBtn:" destination="Ngc-Lv-SHy" eventType="touchUpInside" id="ns3-LG-eau"/>
+                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="kgg-Xv-czB">
                                 <rect key="frame" x="20" y="222" width="335" height="29"/>
@@ -256,6 +260,9 @@
                                     <segment title="Second half"/>
                                 </segments>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="HalfIndicatorChanged:" destination="Ngc-Lv-SHy" eventType="valueChanged" id="JVN-iX-kcy"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LwT-m4-n67">
                                 <rect key="frame" x="45" y="328" width="75" height="50"/>
@@ -267,6 +274,9 @@
                                 <connections>
                                     <action selector="HomePointBtn:" destination="Ngc-Lv-SHy" eventType="touchUpInside" id="C8q-Z6-eqs"/>
                                 </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6N-UN-ujd">
+                                <rect key="frame" x="128" y="154" width="119" height="60"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
@@ -283,11 +293,13 @@
                         <outlet property="HomeScoreBtn" destination="qBY-XU-wik" id="Oqg-C2-HSh"/>
                         <outlet property="HomeScoreTotalLbl" destination="y2z-PY-Urb" id="0nc-rN-nsb"/>
                         <outlet property="HomeTeamLbl" destination="M2l-Gh-hSe" id="9NZ-Kx-WCF"/>
+                        <outlet property="TimeInHalfLbl" destination="Fp9-WR-3LF" id="bbH-Sb-6nZ"/>
+                        <outlet property="TimePlayedLbl" destination="3OJ-XE-qwU" id="OUd-lC-hQv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wx-Bw-4V1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1807.5" y="429.5"/>
+            <point key="canvasLocation" x="1880.5" y="428.5"/>
         </scene>
         <!--Time-->
         <scene sceneID="cUf-0r-zdu">
